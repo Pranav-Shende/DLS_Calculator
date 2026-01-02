@@ -50,45 +50,4 @@ function updateUI() {
 }
 
 scenarioSelect.addEventListener('change', updateUI);
-updateUI(); // Run once on load
-
-
-
-// const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
-// const scenarioSelect = document.getElementById('scenario-select');
-
-// // Theme Switcher
-// toggleSwitch.addEventListener('change', (e) => {
-//     const theme = e.target.checked ? 'dark' : 'light';
-//     document.documentElement.setAttribute('data-theme', theme);
-//     localStorage.setItem('theme', theme);
-// });
-
-// // Init Theme
-// const currentTheme = localStorage.getItem('theme');
-// if (currentTheme) {
-//     document.documentElement.setAttribute('data-theme', currentTheme);
-//     toggleSwitch.checked = currentTheme === 'dark';
-// }
-
-// // Field Logic
-// function updateUI() {
-//     const val = scenarioSelect.value;
-//     const fields = {
-//         t1: document.getElementById('f-team1'),
-//         t2: document.getElementById('f-team2'),
-//         ov: document.getElementById('f-overs'),
-//         wk: document.getElementById('f-wickets'),
-//         dl: document.getElementById('f-delay')
-//     };
-
-//     Object.values(fields).forEach(el => { if(el) el.style.display = 'none'; });
-
-//     if (val === 'pre1') { fields.dl.style.display = 'block'; }
-//     else if (val === 'mid1') { fields.ov.style.display = 'block'; fields.wk.style.display = 'block'; fields.dl.style.display = 'block'; }
-//     else if (val === 'pre2') { fields.t1.style.display = 'block'; fields.dl.style.display = 'block'; }
-//     else if (val === 'mid2') { Object.values(fields).forEach(el => { if(el) el.style.display = 'block'; }); }
-// }
-
-// scenarioSelect.addEventListener('change', updateUI);
-// updateUI();
+updateUI(); 

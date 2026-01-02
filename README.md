@@ -54,6 +54,7 @@ pip install -r requirements.txt
 python app.py
 
 ## 📂 Project Structure
+```text
 DLS_Calculator/
 ├── static/
 │   ├── style.css    # Modern UI styling & Dark Mode variables
@@ -73,3 +74,4 @@ DLS_Calculator/
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 ## Developed by Pranav Shende
+

@@ -68,10 +68,12 @@ DLS_Calculator/
 ├── resources.py     # DLS Resource tables
 ├── requirements.txt # Project dependencies
 └── Procfile         # Deployment configuration
+```
 
 
 ## 🤝 Contributing
 Contributions, issues, and feature requests are welcome! Feel free to check the issues page.
 
 ## Developed by Pranav Shende
+
 

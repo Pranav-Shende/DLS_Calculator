@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DLS Method Calculator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="main-card">
+        <div class="theme-switch-wrapper">
+            <span>Dark Mode</span>
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider round"></div>
+            </label>
+        </div>
+
+        <header>
+            <h1>DLS Calculator</h1>
+        </header>
+
+        <form method="POST">
+            <div class="input-section">
+                <select name="format" class="styled-select">
+                    <option value="odi">ODI (50 Overs)</option>
+                    <option value="t20">T20 (20 Overs)</option>
+                </select>
+                <select name="scenario" id="scenario-select" class="styled-select">
+                    <option value="pre1">Pre-First Innings Delay</option>
+                    <option value="mid1">Mid-First Innings Interruption</option>
+                    <option value="pre2">Pre-Second Innings Delay</option>
+                    <option value="mid2">Mid-Second Innings Interruption</option>
+                </select>
+            </div>
+
+            <div class="fields-grid">
+                <div class="field-box" id="f-team1"><label>Team 1 Score</label><input type="number" name="team1"></div>
+                <div class="field-box" id="f-team2"><label>Team 2 Score</label><input type="number" name="team2"></div>
+                <div class="field-box" id="f-overs"><label>Overs Bowled</label><input type="number" step="0.1" name="overs"></div>
+                <div class="field-box" id="f-wickets"><label>Wickets Lost</label><input type="number" name="wickets"></div>
+                <div class="field-box" id="f-delay"><label>Delay (Mins)</label><input type="number" name="delay"></div>
+            </div>
+
+            <button type="submit" class="submit-btn">Calculate Revised Target</button>
+        </form>
+
+        <hr class="divider">
+
+        <section class="info-section">
+            <h2>What is DLS?</h2>
+            <p>In cricket, <strong>DLS</strong> stands for the <strong>Duckworth–Lewis–Stern method</strong>.</p>
+            <p>It is a mathematical method used to recalculate targets and results in limited-overs matches (ODI/T20) that are interrupted, usually by rain or bad light. It works on the idea that a batting team has two key “resources”:</p>
+            <ul>
+                <li>Overs (or balls) remaining</li>
+                <li>Wickets in hand</li>
+            </ul>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='index.js') }}"></script>
+</body>
+</html>

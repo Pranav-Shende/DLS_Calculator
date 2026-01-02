@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DLS Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script>
+        const theme = localStorage.getItem('theme');
+        if (theme) document.documentElement.setAttribute('data-theme', theme);
+    </script>
+</head>
+<body>
+    <div class="main-card">
+        <header style="text-align: center; margin-bottom: 20px;">
+            <h2 style="color: var(--primary);">Calculation Result</h2>
+            <p style="font-size: 0.9rem; opacity: 0.7;">Revised match data according to DLS Standard</p>
+        </header>
+
+        <div class="result-grid">
+            {% if scenario == 'pre1' %}
+                <div class="stat-card"><span class="stat-label">New Overs</span><span class="stat-value">{{ result.new_overs }}</span></div>
+            {% elif scenario == 'mid1' %}
+                <div class="stat-card"><span class="stat-label">Revised Total</span><span class="stat-value">{{ result.revised_total_overs }}</span></div>
+                <div class="stat-card"><span class="stat-label">Resource %</span><span class="stat-value">{{ result.resources_remaining }}%</span></div>
+            {% elif scenario == 'pre2' or scenario == 'mid2' %}
+                <div class="stat-card" style="grid-column: span 2; border-bottom: 3px solid var(--primary);">
+                    <span class="stat-label">Revised Target</span>
+                    <span class="stat-value" style="font-size: 2.5rem;">{{ result.revised_target }}</span>
+                </div>
+                <div class="stat-card"><span class="stat-label">Runs Needed</span><span class="stat-value">{{ result.runs_needed }}</span></div>
+                <div class="stat-card"><span class="stat-label">Required RR</span><span class="stat-value">{{ result.required_run_rate }}</span></div>
+                {% if scenario == 'mid2' %}
+                    <div class="stat-card" style="grid-column: span 2;"><span class="stat-label">Par Score</span><span class="stat-value">{{ result.par_score }}</span></div>
+                {% endif %}
+            {% endif %}
+        </div>
+        
+        <a href="/" class="submit-btn">Calculate New Scenario</a>
+    </div>
+</body>
+</html>
